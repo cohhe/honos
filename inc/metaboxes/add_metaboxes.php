@@ -1,6 +1,6 @@
 <?php
 
-class create_meta_boxes {
+class honos_create_meta_boxes {
 	private $config;
 	protected $options;
 

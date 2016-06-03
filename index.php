@@ -44,7 +44,7 @@ global $honos_site_width;
 			endif;
 		?>
 	</div><!-- .content-wrapper -->
-	<?php honos_paging_nav(); ?>
+	<?php wp_kses(honos_paging_nav(),array()); ?>
 </div><!-- #main-content -->
 
 <?php

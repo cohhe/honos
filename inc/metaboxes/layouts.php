@@ -20,4 +20,4 @@ $options = array(array(
 ));
 
 require_once(get_template_directory() . '/inc/metaboxes/add_metaboxes.php');
-new create_meta_boxes($config, $options);
+new honos_create_meta_boxes($config, $options);

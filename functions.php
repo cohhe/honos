@@ -56,6 +56,7 @@ if ( ! function_exists( 'honos_setup' ) ) :
 	 * @since Honos 1.0
 	 */
 	function honos_setup() {
+		global $wp_version;
 		require(get_template_directory() . '/inc/metaboxes/layouts.php');
 
 		/**
@@ -109,50 +110,21 @@ if ( ! function_exists( 'honos_setup' ) ) :
 		add_filter( 'use_default_gallery_style', '__return_false' );
 
 		add_theme_support( 'title-tag' );
-		add_theme_support( 'custom-header' );
+
+		if ( version_compare( $wp_version, '4.5', '>=' ) ) {
+			add_theme_support( 'custom-logo' );
+		} else {
+			add_theme_support( 'custom-header' );
+		}
 	}
 endif; // honos_setup
 add_action( 'after_setup_theme', 'honos_setup' );
 
 // Admin CSS
-function vh_admin_css() {
-	wp_enqueue_style( 'vh-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
+function honos_admin_css() {
+	wp_enqueue_style( 'honos-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
 }
-add_action('admin_head','vh_admin_css');
-
-function honos_tag_list( $post_id, $return = false ) {
-	$entry_utility = '';
-	$posttags = get_the_tags( $post_id );
-	if ( $posttags ) {
-		$entry_utility .= '
-		<div class="tag-link">
-			<span class="icon-tags"></span>';
-				foreach( $posttags as $tag ) {
-					$entry_utility .= $tag->name . ' '; 
-				}
-			$entry_utility .= '
-		</div>';
-	}
-
-	if ( $return ) {
-		return $entry_utility;
-	} else {
-		echo $entry_utility;
-	}
-}
-
-function honos_get_pagination( $post_count ) {
-	$pagination = '';
-	for ($i=0; $i < $post_count; $i++) {
-		$extra = '';
-		if ( $i == 0 ) {
-			$extra = ' active';
-		}
-		$pagination .= '<a href="javascript:void(0)" class="post-pagination-item' . $extra . '"></a>';
-	}
-
-	return $pagination;
-}
+add_action('admin_head','honos_admin_css');
 
 function honos_category_list( $post_id, $return = false ) {
 	$category_list = get_the_category_list( ', ', '', $post_id );
@@ -160,7 +132,7 @@ function honos_category_list( $post_id, $return = false ) {
 	if ( $category_list ) {
 		$entry_utility .= '
 		<span class="post-category">
-			in: ' . $category_list . '
+			'.__('in', 'honos').': ' . $category_list . '
 		</span>';
 	}
 
@@ -171,11 +143,6 @@ function honos_category_list( $post_id, $return = false ) {
 	}
 }
 
-function honos_comment_count( $post_id ) {
-	$comments = wp_count_comments($post_id); 
-	return $comments->approved;
-}
-
 /**
  * Register one Honos 1.0 widget area.
  *
@@ -183,7 +150,7 @@ function honos_comment_count( $post_id ) {
  *
  * @return void
  */
-function vh_widgets_init() {
+function honos_widgets_init() {
 
 	register_sidebar(array(
 		'name' => __('Footer Area One', 'honos'),
@@ -246,7 +213,7 @@ function vh_widgets_init() {
 	));
 
 }
-add_action('widgets_init', 'vh_widgets_init');
+add_action('widgets_init', 'honos_widgets_init');
 
 /**
  * Custom template tags for honos 1.0
@@ -325,37 +292,6 @@ function honos_content_width() {
 }
 add_action( 'template_redirect', 'honos_content_width' );
 
-/**
- * Prevent page scroll when clicking the More link
- *
- * @since Honos 1.0
- *
- * @return void
- */
-function remove_more_link_scroll( $link ) {
-	$link = preg_replace( '|#more-[0-9]+|', '', $link );
-	return $link;
-}
-add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
-
-/**
- * Register Lato Google font for Honos 1.0.
- *
- * @since Honos 1.0
- *
- * @return string
- */
-function honos_font_url() {
-	$font_url = '';
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Lato, translate this to 'off'. Do not translate into your own language.
-	 */
-	$font_url = add_query_arg( 'family', urlencode( 'Domine:100,300,400' ), "//fonts.googleapis.com/css" );
-
-	return $font_url;
-}
-
 function honos_excerpt_length( $length ) {
 	return 45;
 }
@@ -378,17 +314,16 @@ function honos_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array() );
 
 	// Add Google fonts
-	wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Domine:100,300,400,500,600,700|Merriweather:100,300,400,500,600,700|Lato:100,300,400,500,600,700|Open+Sans:100,300,400,500,600,700|Libre+Baskerville:100,300,400,500,600,700&subset=latin');
-	wp_enqueue_style( 'googleFonts');
+	wp_enqueue_style( 'honos-fonts', honos_fonts_url(), array(), null );
 
 	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.2' );
+	wp_enqueue_style( 'honos-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.2' );
 
 	// Load our main stylesheet.
-	wp_enqueue_style( 'honos-style', get_stylesheet_uri(), array( 'genericons' ) );
+	wp_enqueue_style( 'honos-style', get_stylesheet_uri(), array( 'honos-genericons' ) );
 
 	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'honos-ie', get_template_directory_uri() . '/css/ie.css', array( 'honos-style', 'genericons' ), '20131205' );
+	wp_enqueue_style( 'honos-ie', get_template_directory_uri() . '/css/ie.css', array( 'honos-style', 'honos-genericons' ), '20131205' );
 	wp_style_add_data( 'honos-ie', 'conditional', 'lt IE 9' );
 
 	wp_enqueue_script( 'comment-reply' );
@@ -396,93 +331,52 @@ function honos_scripts() {
 	wp_enqueue_script( 'honos-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20131209', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '20131209', true );
 
-	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.min.css', array() );
+	wp_enqueue_style( 'honos-animate', get_template_directory_uri() . '/css/animate.min.css', array() );
 
 	wp_enqueue_script( 'jquery-ui-draggable' );
 
-	wp_enqueue_script( 'jquery.bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'jquery-bxslider', get_template_directory_uri() . '/js/jquery.bxslider.js', array( 'jquery' ), '', true );
 
-	wp_enqueue_script( 'jquery.jcarousel', get_template_directory_uri() . '/js/jquery.jcarousel.pack.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'jquery-jcarousel', get_template_directory_uri() . '/js/jquery.jcarousel.js', array( 'jquery' ), '', true );
 
-	wp_enqueue_script( 'jquery.isotope', get_template_directory_uri() . '/js/jquery.isotope.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'jquery-isotope', get_template_directory_uri() . '/js/jquery.isotope.js', array( 'jquery' ), '', true );
+
+	// Add html5
+	wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5.js' );
+	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'honos_scripts' );
 
 // Admin Javascript
 add_action( 'admin_enqueue_scripts', 'honos_admin_scripts' );
-function honos_admin_scripts() {
-	wp_register_script('master', get_template_directory_uri() . '/inc/js/admin-master.js', array('jquery'));
-	wp_enqueue_script('master');
+function honos_admin_scripts( $hook ) {
+	if ( $hook == 'post.php' ) {
+		wp_register_script('honos-master', get_template_directory_uri() . '/inc/js/admin-master.js', array('jquery'));
+		wp_enqueue_script('honos-master');
+	}	
 }
 
-if ( ! function_exists( 'honos_the_attached_image' ) ) :
-	/**
-	 * Print the attached image with a link to the next attached image.
-	 *
-	 * @since Honos 1.0
-	 *
-	 * @return void
-	 */
-	function honos_the_attached_image() {
-		$post                = get_post();
-		/**
-		 * Filter the default Honos 1.0 attachment size.
-		 *
-		 * @since Honos 1.0
-		 *
-		 * @param array $dimensions {
-		 *     An array of height and width dimensions.
-		 *
-		 *     @type int $height Height of the image in pixels. Default 810.
-		 *     @type int $width  Width of the image in pixels. Default 810.
-		 * }
-		 */
-		$attachment_size     = apply_filters( 'honos_attachment_size', array( 810, 810 ) );
-		$next_attachment_url = wp_get_attachment_url();
+function honos_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
 
-		/*
-		 * Grab the IDs of all the image attachments in a gallery so we can get the URL
-		 * of the next adjacent image in a gallery, or the first image (if we're
-		 * looking at the last image in a gallery), or, in a gallery of one, just the
-		 * link to that image file.
-		 */
-		$attachment_ids = get_posts( array(
-			'post_parent'    => $post->post_parent,
-			'fields'         => 'ids',
-			'numberposts'    => -1,
-			'post_status'    => 'inherit',
-			'post_type'      => 'attachment',
-			'post_mime_type' => 'image',
-			'order'          => 'ASC',
-			'orderby'        => 'menu_order ID',
-		) );
+	$fonts[] = 'Domine:100,300,400,500,600,700';
+	$fonts[] = 'Merriweather:100,300,400,500,600,700';
+	$fonts[] = 'Lato:100,300,400,500,600,700';
+	$fonts[] = 'Open+Sans:100,300,400,500,600,700';
+	$fonts[] = 'Libre+Baskerville:100,300,400,500,600,700';
 
-		// If there is more than 1 attachment in a gallery...
-		if ( count( $attachment_ids ) > 1 ) {
-			foreach ( $attachment_ids as $attachment_id ) {
-				if ( $attachment_id == $post->ID ) {
-					$next_id = current( $attachment_ids );
-					break;
-				}
-			}
 
-			// get the URL of the next image attachment...
-			if ( $next_id ) {
-				$next_attachment_url = get_attachment_link( $next_id );
-			}
-
-			// or get the URL of the first image attachment.
-			else {
-				$next_attachment_url = get_attachment_link( array_shift( $attachment_ids ) );
-			}
-		}
-
-		printf( '<a href="%1$s" rel="attachment">%2$s</a>',
-			esc_url( $next_attachment_url ),
-			wp_get_attachment_image( $post->ID, $attachment_size )
-		);
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
 	}
-endif;
+
+	return $fonts_url;
+}
 
 /**
  * Extend the default WordPress body classes.
@@ -512,41 +406,6 @@ function honos_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'honos_body_classes' );
-
-/**
- * Create a nicely formatted and more specific title element text for output
- * in head of document, based on current view.
- *
- * @since Honos 1.0
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function honos_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() ) {
-		return $title;
-	}
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
-	}
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'honos' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-add_filter( 'wp_title', 'honos_wp_title', 10, 2 );
 
 /**
  * Create HTML list of nav menu items.
@@ -587,7 +446,7 @@ class Honos_Header_Menu_Walker extends Walker_Nav_Menu {
 			? 'has-description ' : '';
 
 		! empty ( $class_names )
-			and $class_names = ' class="' . $has_description . esc_attr( $class_names ) . ' depth-' . $depth . '"';
+			and $class_names = ' class="' . $has_description . esc_attr( $class_names ) . ' depth-' . esc_attr( $depth ) . '"';
 
 		$output .= "<li id='menu-item-$item->ID' $class_names>";
 
@@ -671,16 +530,6 @@ require get_template_directory() . '/inc/template-tags.php';
 // Add Theme Customizer functionality.
 require get_template_directory() . '/inc/customizer.php';
 
-function get_depth($postid) {
-	$depth = ($postid==get_option('page_on_front')) ? -1 : 0;
-	while ($postid > 0) {
-	$postid = get_post_ancestors($postid);
-	$postid = $postid[0];
-	$depth++;
-	}
-	return $depth;
-}
-
 /**
  * Register the required plugins for this theme.
  *
@@ -693,7 +542,7 @@ function get_depth($postid) {
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function vh_register_required_plugins() {
+function honos_register_required_plugins() {
 
 	/**
 	 * Array of plugin arrays. Required keys are name and slug.
@@ -701,7 +550,7 @@ function vh_register_required_plugins() {
 	 */
 	$plugins = array(
 		array(
-			'name'     				=> 'Bootstrap 3 Shortcodes', // The plugin name
+			'name'     				=> __('Bootstrap 3 Shortcodes', 'honos'), // The plugin name
 			'slug'     				=> 'bootstrap-3-shortcodes', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '3.3.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
@@ -710,7 +559,7 @@ function vh_register_required_plugins() {
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		),
 		array(
-			'name'     				=> 'Contact Form 7', // The plugin name
+			'name'     				=> __('Contact Form 7', 'honos'), // The plugin name
 			'slug'     				=> 'contact-form-7', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '4.3.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
@@ -719,7 +568,7 @@ function vh_register_required_plugins() {
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		),
 		array(
-			'name'     				=> 'Easy Testimonials', // The plugin name
+			'name'     				=> __('Easy Testimonials', 'honos'), // The plugin name
 			'slug'     				=> 'easy-testimonials', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '1.34', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
@@ -728,10 +577,19 @@ function vh_register_required_plugins() {
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		),
 		array(
-			'name'     				=> 'Newsletter', // The plugin name
+			'name'     				=> __('Newsletter', 'honos'), // The plugin name
 			'slug'     				=> 'newsletter', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '4.0.8', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+		),
+		array(
+			'name'     				=> __('Functionality for Honos theme', 'honos'), // The plugin name
+			'slug'     				=> 'functionality-for-honos-theme', // The plugin slug (typically the folder name)
+			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
+			'version' 				=> '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
@@ -778,13 +636,4 @@ function vh_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
-add_action( 'tgmpa_register', 'vh_register_required_plugins' );
-
-function honos_allowed_tags() {
-	global $allowedposttags;
-	$allowedposttags['script'] = array(
-		'type' => true,
-		'src' => true
-	);
-}
-add_action( 'init', 'honos_allowed_tags' );
+add_action( 'tgmpa_register', 'honos_register_required_plugins' );

@@ -34,7 +34,7 @@ if ( $comment_count == 0 ) {
 				$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'honos-latest-news' );
 				echo '<div class="single-image-container">';
 				if ( !empty($img) ) {
-					echo '<img src="'.$img['0'].'" class="single-post-image" alt="Post with image">';
+					echo '<img src="'.esc_url($img['0']).'" class="single-post-image" alt="'.__('Post with image', 'honos').'">';
 				} else {
 					echo '<span class="post-no-image"></span>';
 				}
@@ -51,7 +51,7 @@ if ( $comment_count == 0 ) {
 				$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'honos-full-width' );
 				echo '<div class="single-post-image-container">';
 				if ( !empty($img) ) {
-					echo '<img src="'.$img['0'].'" class="single-post-image" alt="Post with image">';
+					echo '<img src="'.esc_url($img['0']).'" class="single-post-image" alt="'.__('Post with image', 'honos').'">';
 				}
 				echo '</div>';
 				the_title( '<h3 class="entry-title">', '</h3>' );
@@ -73,16 +73,7 @@ if ( $comment_count == 0 ) {
 		<div id="entry-content-wrapper">
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'honos' ) ); ?>
 		</div>
-		<div class="single-post-share">
-			<span><?php _e('Share post:', 'honos'); ?></span>
-			<?php
-				echo '<a href="http://twitter.com/share?url=' . get_permalink() . '&amp;text=' . urlencode( get_the_title() ) . '" class="social-icon icon-twitter" target="_blank"></a>';
-				echo '<a href="http://www.facebook.com/sharer.php?u=' . get_permalink() . '" class="social-icon icon-facebook" target="_blank"></a>';
-				echo '<a href="https://plus.google.com/share?url=' . get_permalink() . '" class="social-icon icon-gplus" target="_blank"></a>';
-				echo "<a href=\"javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());\" class=\"social-icon icon-pinterest\" target=\"_blank\"></a>";
-				echo '<a href="http://vk.com/share.php?url=' . get_permalink() . '" class="social-icon icon-vkontakte" target="_blank"></a>';
-			?>
-		</div>
+		<?php if ( function_exists('honos_get_content_share()') ) { echo honos_get_content_share(); } ?>
 		<?php if ( get_the_author_meta( 'description' ) ) { ?>
 			<div id="author-info">
 				<h3 class="author-title"><?php _e('About post author', 'honos'); ?></h3>

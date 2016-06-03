@@ -27,7 +27,7 @@ global $honos_site_width, $honos_layout_type;
 			get_sidebar( 'page' );
 		}
 	?>
-	<div class="content-wrapper <?php echo $honos_site_width; ?>">
+	<div class="content-wrapper <?php echo esc_attr($honos_site_width); ?>">
 
 			<?php
 				// Start the Loop.

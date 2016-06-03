@@ -18,7 +18,7 @@ global $honos_site_width;
 			get_sidebar( 'post' );
 		}
 	?>
-	<div class="content-wrapper <?php echo $honos_site_width; ?>">
+	<div class="content-wrapper <?php echo esc_attr($honos_site_width); ?>">
 		<?php
 			// Start the Loop.
 			while ( have_posts() ) : the_post();

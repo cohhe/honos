@@ -1,4 +1,15 @@
 Honos changelog
 
+= Version 1.1 =
+* Removed some of the functions from theme
+* Escaped some of the outputs
+* Added text domains to strings
+* Prefixed functions
+* Prefixed enqueues
+* Removed title tag
+* Enqueue google fonts differently
+* Added unminified scripts
+
+
 = Version 1.0 =
 * Initial release

@@ -21,17 +21,12 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
-	
 	<?php wp_head(); ?>
 </head>
 <?php
-global $honos_site_width, $honos_layout_type, $withcomments;
+global $honos_site_width, $honos_layout_type, $withcomments, $wp_version;
 $withcomments = 1;
 
 $form_class    = '';
@@ -65,8 +60,19 @@ if ( ( HONOS_LAYOUT != 'sidebar-no' && is_active_sidebar( 'sidebar-5' ) ) || ( H
 	$honos_site_width = 'col-sm-9 col-md-9 col-lg-9';
 }
 
-$logo = get_custom_header();
-$logo = $logo->url;
+if ( version_compare( $wp_version, '4.5', '>=' ) ) {
+	$logo = '';
+	if ( get_custom_logo() ) {
+		$logo = get_custom_logo();
+	};
+} else {
+	$logo_f = get_custom_header();
+	$logo_f = $logo->url;
+	$logo = '';
+	if ( $logo_f ) {
+		$logo = '<img src="'.$logo_f.'" alt="'.__('Site logo', 'beryl').'">';
+	}
+}
 
 if (get_search_query() == '') {
 	$search_string = __('Search', 'honos');
@@ -74,11 +80,11 @@ if (get_search_query() == '') {
 	$search_string = get_search_query();
 }
 
-$call_us_text = get_theme_mod( 'honos_header_call_us_text', 'Call us:' );
+$call_us_text = get_theme_mod( 'honos_header_call_us_text', __('Call us:', 'honos') );
 $call_us_link = get_theme_mod( 'honos_header_call_us_link', '' );
 $call_us_link_text = get_theme_mod( 'honos_header_call_us_link_text', '' );
 
-$consult_text = get_theme_mod( 'honos_header_consult_text', 'Request a free consultation' );
+$consult_text = get_theme_mod( 'honos_header_consult_text', __('Request a free consultation', 'honos') );
 $consult_text_link = get_theme_mod( 'honos_header_consult_text_link', '' );
 
 ?>
@@ -89,12 +95,12 @@ $consult_text_link = get_theme_mod( 'honos_header_consult_text_link', '' );
 		<div class="header-top-wrapper">
 			<div class="header-top">
 				<?php if ( $call_us_link && $call_us_link_text ) { ?>
-					<span class="call-us"><?php echo $call_us_text; ?> <a href="<?php echo $call_us_link; ?>"><?php echo $call_us_link_text; ?></a></span>
+					<span class="call-us"><?php echo esc_html($call_us_text); ?> <a href="<?php echo esc_url($call_us_link); ?>"><?php echo esc_html($call_us_link_text); ?></a></span>
 				<?php } ?>
 				<span class="header-search icon-search"></span>
 				<?php get_search_form( true ); ?>
 				<?php if ( $consult_text && $consult_text_link ) { ?>
-					<a href="<?php echo $consult_text_link; ?>" class="free-consult icon-chat"><?php echo $consult_text; ?></a>
+					<a href="<?php echo esc_url($consult_text_link); ?>" class="free-consult icon-chat"><?php echo esc_html($consult_text); ?></a>
 				<?php } ?>
 				<div class="clearfix"></div>
 			</div>
@@ -102,9 +108,9 @@ $consult_text_link = get_theme_mod( 'honos_header_consult_text_link', '' );
 		<div class="header-bottom-wrapper">
 			<div class="header-bottom">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-logo">
-					<?php if ( $logo ) { ?>
-						<img src="<?php echo $logo; ?>" alt="<?php _e('Site logo', 'honos'); ?>">
-					<?php } else { ?>
+					<?php if ( $logo ) {
+						echo $logo;
+					} else { ?>
 						<span class="blog-name"><?php bloginfo( 'name' ); ?></span>
 						<span class="blog-description"><?php bloginfo( 'description' ); ?></span>
 					<?php } ?>

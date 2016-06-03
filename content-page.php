@@ -14,7 +14,7 @@ $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'honos-full-width' 
 	<div class="entry-content">
 		<div id="entry-content-wrapper">
 			<?php if ( !empty($img) ) {
-				echo '<img src="'.$img['0'].'" class="single-post-image" alt="Page with image">';
+				echo '<img src="'.esc_url($img['0']).'" class="single-post-image" alt="Page with image">';
 			} ?>
 			<?php the_content(); ?>
 		</div>
