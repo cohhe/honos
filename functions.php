@@ -136,6 +136,11 @@ function honos_category_list( $post_id, $return = false ) {
 		</span>';
 	}
 
+		$entry_utility .= '
+		<span class="post-category">
+			Tags: '. get_the_tag_list() . '
+		</span>';
+
 	if ( $return ) {
 		return $entry_utility;
 	} else {
