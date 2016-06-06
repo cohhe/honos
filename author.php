@@ -16,7 +16,7 @@ global $honos_site_width;
 ?>
 
 <div id="main-content" class="main-content">
-	<h1 class="main-page-title"><?php _e('Author', 'honos'); echo ': ' . get_the_author(); ?></h1>
+	<h1 class="main-page-title"><?php esc_html_e('Author', 'honos'); echo ': ' . get_the_author(); ?></h1>
 	<div class="content-wrapper">
 
 			<?php if ( have_posts() ) :
@@ -46,7 +46,7 @@ global $honos_site_width;
 			?>
 
 	</div><!-- .content-wrapper -->
-	<?php wp_kses(honos_paging_nav(),array()); ?>
+	<?php honos_paging_nav(); ?>
 </div><!-- #main-content -->
 
 <?php

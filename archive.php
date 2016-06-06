@@ -22,7 +22,7 @@ get_header();
 global $honos_site_width;
 ?>
 <div id="main-content" class="main-content">
-	<h1 class="main-page-title"><?php _e('Archive', 'honos'); echo ': ' . single_month_title(' ', false); ?></h1>
+	<h1 class="main-page-title"><?php esc_html_e('Archive', 'honos'); echo ': ' . single_month_title(' ', false); ?></h1>
 	<div class="content-wrapper">
 
 			<?php if ( have_posts() ) :
@@ -46,7 +46,7 @@ global $honos_site_width;
 				endif;
 			?>
 	</div><!-- .content-wrapper -->
-	<?php wp_kses(honos_paging_nav(),array()); ?>
+	<?php honos_paging_nav(); ?>
 </div><!-- #main-content -->
 
 <?php

@@ -21,7 +21,7 @@ global $honos_site_width;
 
 <div id="main-content" class="main-content">
 	<?php if ( is_home() ) { ?>
-		<h1 class="main-page-title"><?php _e('Blog', 'honos'); ?></h1>
+		<h1 class="main-page-title"><?php esc_html_e('Blog', 'honos'); ?></h1>
 	<?php } ?>
 	<div class="content-wrapper">
 		<?php
@@ -44,7 +44,7 @@ global $honos_site_width;
 			endif;
 		?>
 	</div><!-- .content-wrapper -->
-	<?php wp_kses(honos_paging_nav(),array()); ?>
+	<?php honos_paging_nav(); ?>
 </div><!-- #main-content -->
 
 <?php

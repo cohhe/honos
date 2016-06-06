@@ -12,7 +12,7 @@ get_header();
 global $honos_site_width;
 ?>
 <div id="main-content" class="main-content">
-	<h1 class="main-page-title"><?php _e('Search results', 'honos'); echo ': ' . get_search_query(); ?></h1>
+	<h1 class="main-page-title"><?php esc_html_e('Search results', 'honos'); echo ': ' . get_search_query(); ?></h1>
 	<div class="content-wrapper">
 		<?php if ( have_posts() ) :
 				// Start the Loop.

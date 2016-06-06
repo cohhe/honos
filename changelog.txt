@@ -1,5 +1,12 @@
 Honos changelog
 
+= Version 1.2 =
+* Added text domain to untranslatable strings
+* Escaped text outputs
+* Added footer column count to customizer
+* Removed some unnecessary functions
+* Custom Google fonts can be turned off
+
 = Version 1.1 =
 * Removed some of the functions from theme
 * Escaped some of the outputs
@@ -9,7 +16,6 @@ Honos changelog
 * Removed title tag
 * Enqueue google fonts differently
 * Added unminified scripts
-
 
 = Version 1.0 =
 * Initial release

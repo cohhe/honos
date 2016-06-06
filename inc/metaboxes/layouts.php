@@ -5,14 +5,14 @@
 
 $config = array(
 	'id'       => 'vh_layouts',
-	'title'    => __('Layouts', 'honos'),
+	'title'    => esc_html__('Layouts', 'honos'),
 	'pages'    => array('page', 'post'),
 	'context'  => 'normal',
 	'priority' => 'high',
 );
 
 $options = array(array(
-	'name'    => __('Layout type', 'honos'),
+	'name'    => esc_html__('Layout type', 'honos'),
 	'id'      => 'layouts',
 	'type'    => 'layouts',
 	'only'    => 'page,post',

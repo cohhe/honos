@@ -17,10 +17,7 @@ if ( ! is_active_sidebar( 'sidebar-1' )
 	return;
 
 // How many footer columns to show?
-$footer_columns = get_option( 'vh_footer_columns' );
-if ( $footer_columns == false ) {
-	$footer_columns = 4;
-}
+$footer_columns = intval( get_theme_mod('honos_footer_column_count', '4') );
 
 $class = ' span12 ';
 if ( $footer_columns == 4 ) {

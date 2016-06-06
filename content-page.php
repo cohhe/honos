@@ -10,7 +10,7 @@
 $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'honos-full-width' );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php esc_attr(the_ID()); ?>" <?php post_class(); ?>>
 	<div class="entry-content">
 		<div id="entry-content-wrapper">
 			<?php if ( !empty($img) ) {
@@ -20,7 +20,7 @@ $img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'honos-full-width' 
 		</div>
 		<?php
 			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'honos' ) . '</span>',
+				'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'honos' ) . '</span>',
 				'after'       => '<div class="clearfix"></div></div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',

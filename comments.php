@@ -31,9 +31,9 @@ if ( post_password_required() ) {
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'honos' ); ?></h1>
-		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'honos' ) ); ?></div>
-		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'honos' ) ); ?></div>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'honos' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( esc_html__( '&larr; Older Comments', 'honos' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &rarr;', 'honos' ) ); ?></div>
 	</nav><!-- #comment-nav-above -->
 	<?php endif; // Check for comment navigation. ?>
 
@@ -49,14 +49,14 @@ if ( post_password_required() ) {
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'honos' ); ?></h1>
-		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'honos' ) ); ?></div>
-		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'honos' ) ); ?></div>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'honos' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( esc_html__( '&larr; Older Comments', 'honos' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &rarr;', 'honos' ) ); ?></div>
 	</nav><!-- #comment-nav-below -->
 	<?php endif; // Check for comment navigation. ?>
 
 	<?php if ( ! comments_open() ) : ?>
-	<p class="no-comments"><?php _e( 'Comments are closed.', 'honos' ); ?></p>
+	<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'honos' ); ?></p>
 	<?php endif; ?>
 
 	<?php endif; // have_comments() ?>
@@ -65,18 +65,18 @@ if ( post_password_required() ) {
 		array('comment_notes_after' => '',
 				'logged_in_as' => '',
 				'url' => '',
-				'title_reply'      => __( 'Leave a reply', 'honos'),
-				'comment_notes_before' => '<span class="comment-form-before">' . __('Your email adress will not be published. Required fields are marked*', 'honos') . '</span>',
-				'label_submit'    => __( 'Post Comment', 'honos'),
-				'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . __('Comment*', 'honos') . '">' . '</textarea></p>',
+				'title_reply'      => esc_html__( 'Leave a reply', 'honos'),
+				'comment_notes_before' => '<span class="comment-form-before">' . esc_html__('Your email adress will not be published. Required fields are marked*', 'honos') . '</span>',
+				'label_submit'    => esc_html__( 'Post Comment', 'honos'),
+				'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . esc_html__('Comment*', 'honos') . '">' . '</textarea></p>',
 				'fields' => array(
 					'author' =>
 						'<div class="comment-form-top">
-						<span class="comment-author"><input id="author" name="author" type="text" placeholder="' . __('Name*', 'honos') . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /></span>',
+						<span class="comment-author"><input id="author" name="author" type="text" placeholder="' . esc_html__('Name*', 'honos') . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /></span>',
 					'email' =>
-						'<span class="comment-email"><input id="email" name="email" type="text" placeholder="' . __('E-mail*', 'honos') . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /></span>',
+						'<span class="comment-email"><input id="email" name="email" type="text" placeholder="' . esc_html__('E-mail*', 'honos') . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /></span>',
 					'url' =>
-						'<span class="comment-url"><input id="url" name="url" type="text" placeholder="' . __('Website', 'honos') . '" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></span></div>',
+						'<span class="comment-url"><input id="url" name="url" type="text" placeholder="' . esc_html__('Website', 'honos') . '" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></span></div>',
 				)
 			)
 		); ?>

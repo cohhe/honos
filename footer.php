@@ -16,19 +16,16 @@
 		<div class="top-footer">
 			<?php
 				// How many footer columns to show?
-				$footer_columns = get_option( 'vh_footer_columns' );
-				if ( $footer_columns == false ) {
-					$footer_columns = 4;
-				}
+				$footer_columns = get_theme_mod('honos_footer_column_count', '4');
 			?>
-			<div class="footer-links-container columns_count_<?php echo $footer_columns; ?>">
+			<div class="footer-links-container columns_count_<?php echo esc_attr( $footer_columns ); ?>">
 				<?php get_sidebar( 'footer' ); ?>
 				<div class="clearfix"></div>
 			</div>
 		</div>
 		<div class="bottom-footer">
 			<div class="bottom-footer-inner">
-				<div class="copyright">Theme by <a href="https://cohhe.com/">Cohhe</a></div>
+				<div class="copyright"><?php printf( esc_html__( 'Theme by %s', 'honos' ), '<a href="https://cohhe.com" target="_blank">Cohhe</a>' ); ?></div>
 				<?php if ( function_exists('honos_get_footer_social') ) { echo honos_get_footer_social(); } ?>
 				<div class="clearfix"></div>
 			</div>

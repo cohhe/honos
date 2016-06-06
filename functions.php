@@ -103,7 +103,7 @@ if ( ! function_exists( 'honos_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			'primary'   => __( 'Primary menu', 'honos' )
+			'primary'   => esc_html__( 'Primary menu', 'honos' )
 		) );
 
 		// This theme uses its own gallery styles.
@@ -132,14 +132,26 @@ function honos_category_list( $post_id, $return = false ) {
 	if ( $category_list ) {
 		$entry_utility .= '
 		<span class="post-category">
-			'.__('in', 'honos').': ' . $category_list . '
+			'.esc_html__('in', 'honos').': ' . $category_list . '
 		</span>';
 	}
 
+	if ( $return ) {
+		return $entry_utility;
+	} else {
+		echo $entry_utility;
+	}
+}
+
+function honos_tag_list( $post_id, $return = false ) {
+	$tag_list = get_the_tag_list('', ', ', '');
+	$entry_utility = '';
+	if ( $tag_list ) {
 		$entry_utility .= '
 		<span class="post-category">
-			Tags: '. get_the_tag_list() . '
+			'.esc_html__('tags', 'honos').': '. $tag_list . '
 		</span>';
+	}
 
 	if ( $return ) {
 		return $entry_utility;
@@ -158,9 +170,9 @@ function honos_category_list( $post_id, $return = false ) {
 function honos_widgets_init() {
 
 	register_sidebar(array(
-		'name' => __('Footer Area One', 'honos'),
+		'name' => esc_html__('Footer Area One', 'honos'),
 		'id' => 'sidebar-1',
-		'description' => __('', 'honos'),
+		'description' => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s row-fluid">',
 		'after_widget' => '<div class="clearfix"></div></div>',
 		'before_title' => '<h4>',
@@ -168,9 +180,9 @@ function honos_widgets_init() {
 	));
 
 	register_sidebar(array(
-		'name' => __('Footer Area Two', 'honos'),
+		'name' => esc_html__('Footer Area Two', 'honos'),
 		'id' => 'sidebar-2',
-		'description' => __('', 'honos'),
+		'description' => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s row-fluid">',
 		'after_widget' => '<div class="clearfix"></div></div>',
 		'before_title' => '<h4>',
@@ -178,9 +190,9 @@ function honos_widgets_init() {
 	));
 
 	register_sidebar(array(
-		'name' => __('Footer Area Three', 'honos'),
+		'name' => esc_html__('Footer Area Three', 'honos'),
 		'id' => 'sidebar-3',
-		'description' => __('', 'honos'),
+		'description' => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s row-fluid">',
 		'after_widget' => '<div class="clearfix"></div></div>',
 		'before_title' => '<h4>',
@@ -188,9 +200,9 @@ function honos_widgets_init() {
 	));
 
 	register_sidebar(array(
-		'name' => __('Footer Area Four', 'honos'),
+		'name' => esc_html__('Footer Area Four', 'honos'),
 		'id' => 'sidebar-4',
-		'description' => __('', 'honos'),
+		'description' => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s row-fluid">',
 		'after_widget' => '<div class="clearfix"></div></div>',
 		'before_title' => '<h4>',
@@ -198,9 +210,9 @@ function honos_widgets_init() {
 	));
 
 	register_sidebar(array(
-		'name' => __('Post sidebar', 'honos'),
+		'name' => esc_html__('Post sidebar', 'honos'),
 		'id' => 'sidebar-5',
-		'description' => __('', 'honos'),
+		'description' => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s row-fluid">',
 		'after_widget' => '<div class="clearfix"></div></div>',
 		'before_title' => '<h4>',
@@ -208,9 +220,9 @@ function honos_widgets_init() {
 	));
 
 	register_sidebar(array(
-		'name' => __('Page sidebar', 'honos'),
+		'name' => esc_html__('Page sidebar', 'honos'),
 		'id' => 'sidebar-6',
-		'description' => __('', 'honos'),
+		'description' => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s row-fluid">',
 		'after_widget' => '<div class="clearfix"></div></div>',
 		'before_title' => '<h4>',
@@ -275,7 +287,15 @@ function honos_paging_nav() {
 	<div class="clearfix"></div>
 	<nav class="navigation paging-navigation" role="navigation">
 		<div class="pagination loop-pagination">
-			<?php echo $links; ?>
+			<?php echo wp_kses($links,array(
+		    'a' => array(
+		        'href' => array(),
+		        'class' => array()
+		    ),
+		    'span' => array(
+		    	'class' => array()
+		    	)
+		)); ?>
 		</div><!-- .pagination -->
 	</nav><!-- .navigation -->
 	<?php
@@ -356,8 +376,7 @@ add_action( 'wp_enqueue_scripts', 'honos_scripts' );
 add_action( 'admin_enqueue_scripts', 'honos_admin_scripts' );
 function honos_admin_scripts( $hook ) {
 	if ( $hook == 'post.php' ) {
-		wp_register_script('honos-master', get_template_directory_uri() . '/inc/js/admin-master.js', array('jquery'));
-		wp_enqueue_script('honos-master');
+		wp_enqueue_script('honos-master', get_template_directory_uri() . '/inc/js/admin-master.js', array('jquery'));
 	}	
 }
 
@@ -366,12 +385,26 @@ function honos_fonts_url() {
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
 
-	$fonts[] = 'Domine:100,300,400,500,600,700';
-	$fonts[] = 'Merriweather:100,300,400,500,600,700';
-	$fonts[] = 'Lato:100,300,400,500,600,700';
-	$fonts[] = 'Open+Sans:100,300,400,500,600,700';
-	$fonts[] = 'Libre+Baskerville:100,300,400,500,600,700';
-
+	/* translators: If there are characters in your language that are not supported by Domine, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Domine font: on or off', 'honos' ) ) {
+		$fonts[] = 'Domine:100,300,400,500,600,700';
+	}
+	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'honos' ) ) {
+		$fonts[] = 'Merriweather:100,300,400,500,600,700';
+	}
+	/* translators: If there are characters in your language that are not supported by Lato, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'honos' ) ) {
+		$fonts[] = 'Lato:100,300,400,500,600,700';
+	}
+	/* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'honos' ) ) {
+		$fonts[] = 'Open+Sans:100,300,400,500,600,700';
+	}
+	/* translators: If there are characters in your language that are not supported by Libre Maskerville, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Libre Maskerville font: on or off', 'honos' ) ) {
+		$fonts[] = 'Libre+Baskerville:100,300,400,500,600,700';
+	}
 
 	if ( $fonts ) {
 		$fonts_url = add_query_arg( array(
@@ -451,7 +484,7 @@ class Honos_Header_Menu_Walker extends Walker_Nav_Menu {
 			? 'has-description ' : '';
 
 		! empty ( $class_names )
-			and $class_names = ' class="' . $has_description . esc_attr( $class_names ) . ' depth-' . esc_attr( $depth ) . '"';
+			and $class_names = ' class="' . esc_attr($has_description) . esc_attr( $class_names ) . ' depth-' . esc_attr( $depth ) . '"';
 
 		$output .= "<li id='menu-item-$item->ID' $class_names>";
 
@@ -555,7 +588,7 @@ function honos_register_required_plugins() {
 	 */
 	$plugins = array(
 		array(
-			'name'     				=> __('Bootstrap 3 Shortcodes', 'honos'), // The plugin name
+			'name'     				=> esc_html__('Bootstrap 3 Shortcodes', 'honos'), // The plugin name
 			'slug'     				=> 'bootstrap-3-shortcodes', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '3.3.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
@@ -564,7 +597,7 @@ function honos_register_required_plugins() {
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		),
 		array(
-			'name'     				=> __('Contact Form 7', 'honos'), // The plugin name
+			'name'     				=> esc_html__('Contact Form 7', 'honos'), // The plugin name
 			'slug'     				=> 'contact-form-7', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '4.3.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
@@ -573,7 +606,7 @@ function honos_register_required_plugins() {
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		),
 		array(
-			'name'     				=> __('Easy Testimonials', 'honos'), // The plugin name
+			'name'     				=> esc_html__('Easy Testimonials', 'honos'), // The plugin name
 			'slug'     				=> 'easy-testimonials', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '1.34', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
@@ -582,7 +615,7 @@ function honos_register_required_plugins() {
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		),
 		array(
-			'name'     				=> __('Newsletter', 'honos'), // The plugin name
+			'name'     				=> esc_html__('Newsletter', 'honos'), // The plugin name
 			'slug'     				=> 'newsletter', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '4.0.8', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
@@ -591,7 +624,7 @@ function honos_register_required_plugins() {
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		),
 		array(
-			'name'     				=> __('Functionality for Honos theme', 'honos'), // The plugin name
+			'name'     				=> esc_html__('Functionality for Honos theme', 'honos'), // The plugin name
 			'slug'     				=> 'functionality-for-honos-theme', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
@@ -618,10 +651,10 @@ function honos_register_required_plugins() {
 		'is_automatic'    	=> true,					   	// Automatically activate plugins after installation or not
 		'message' 			=> '',							// Message to output right before the plugins table
 		'strings'      		=> array(
-			'page_title'                       			=> __( 'Install Required Plugins', 'honos' ),
-			'menu_title'                       			=> __( 'Install Plugins', 'honos' ),
-			'installing'                       			=> __( 'Installing Plugin: %s', 'honos' ), // %1$s = plugin name
-			'oops'                             			=> __( 'Something went wrong with the plugin API.', 'honos' ),
+			'page_title'                       			=> esc_html__( 'Install Required Plugins', 'honos' ),
+			'menu_title'                       			=> esc_html__( 'Install Plugins', 'honos' ),
+			'installing'                       			=> esc_html__( 'Installing Plugin: %s', 'honos' ), // %1$s = plugin name
+			'oops'                             			=> esc_html__( 'Something went wrong with the plugin API.', 'honos' ),
 			'notice_can_install_required'     			=> _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'honos' ), // %1$s = plugin name(s)
 			'notice_can_install_recommended'			=> _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'honos' ), // %1$s = plugin name(s)
 			'notice_cannot_install'  					=> _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'honos' ), // %1$s = plugin name(s)
@@ -632,9 +665,9 @@ function honos_register_required_plugins() {
 			'notice_cannot_update' 						=> _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'honos' ), // %1$s = plugin name(s)
 			'install_link' 					  			=> _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'honos' ),
 			'activate_link' 				  			=> _n_noop( 'Activate installed plugin', 'Activate installed plugins', 'honos' ),
-			'return'                           			=> __( 'Return to Required Plugins Installer', 'honos' ),
-			'plugin_activated'                 			=> __( 'Plugin activated successfully.', 'honos' ),
-			'complete' 									=> __( 'All plugins installed and activated successfully. %s', 'honos' ), // %1$s = dashboard link
+			'return'                           			=> esc_html__( 'Return to Required Plugins Installer', 'honos' ),
+			'plugin_activated'                 			=> esc_html__( 'Plugin activated successfully.', 'honos' ),
+			'complete' 									=> esc_html__( 'All plugins installed and activated successfully. %s', 'honos' ), // %1$s = dashboard link
 			'nag_type'									=> 'updated' // Determines admin notice type - can only be 'updated' or 'error'
 		)
 	);

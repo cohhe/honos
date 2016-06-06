@@ -70,21 +70,21 @@ if ( version_compare( $wp_version, '4.5', '>=' ) ) {
 	$logo_f = $logo->url;
 	$logo = '';
 	if ( $logo_f ) {
-		$logo = '<img src="'.$logo_f.'" alt="'.__('Site logo', 'beryl').'">';
+		$logo = '<img src="'.esc_url($logo_f).'" alt="'.esc_attr__('Site logo', 'beryl').'">';
 	}
 }
 
 if (get_search_query() == '') {
-	$search_string = __('Search', 'honos');
+	$search_string = esc_html__('Search', 'honos');
 } else {
 	$search_string = get_search_query();
 }
 
-$call_us_text = get_theme_mod( 'honos_header_call_us_text', __('Call us:', 'honos') );
+$call_us_text = get_theme_mod( 'honos_header_call_us_text', esc_html__('Call us:', 'honos') );
 $call_us_link = get_theme_mod( 'honos_header_call_us_link', '' );
 $call_us_link_text = get_theme_mod( 'honos_header_call_us_link_text', '' );
 
-$consult_text = get_theme_mod( 'honos_header_consult_text', __('Request a free consultation', 'honos') );
+$consult_text = get_theme_mod( 'honos_header_consult_text', esc_html__('Request a free consultation', 'honos') );
 $consult_text_link = get_theme_mod( 'honos_header_consult_text_link', '' );
 
 ?>

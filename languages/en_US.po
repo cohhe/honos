@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Honos v1.0.0\n"
+"Project-Id-Version: Honos v1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-01-04 13:16:25+0000\n"
+"PO-Revision-Date: 2016-06-06 12:17:41+0000\n"
 "Last-Translator: smaids <smaids2007@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -61,8 +61,8 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-page.php:18
-#: content.php:104
+#: content-page.php:23
+#: content.php:96
 #@ honos
 msgid "Pages:"
 msgstr ""
@@ -70,12 +70,6 @@ msgstr ""
 #: content-none.php:13
 #@ honos
 msgid "Nothing Found"
-msgstr ""
-
-#: content-none.php:19
-#, php-format
-#@ honos
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: content-none.php:23
@@ -86,12 +80,6 @@ msgstr ""
 #: content-none.php:28
 #@ honos
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: functions.php:532
-#, php-format
-#@ honos
-msgid "Page %s"
 msgstr ""
 
 #: inc/back-compat.php:41
@@ -118,29 +106,6 @@ msgstr ""
 msgid "Display Site Title &amp; Tagline"
 msgstr ""
 
-#: inc/customizer.php:399
-#@ honos
-msgid "Honos 1.0"
-msgstr ""
-
-#: inc/customizer.php:402
-#, php-format
-#@ honos
-msgid "The home page features your choice of up to 6 posts prominently displayed in a grid or slider, controlled by the <a href=\"%1$s\">featured</a> tag; you can change the tag and layout in <a href=\"%2$s\">Appearance &rarr; Customize</a>. If no posts match the tag, <a href=\"%3$s\">sticky posts</a> will be displayed instead."
-msgstr ""
-
-#: inc/customizer.php:403
-#, php-format
-#@ honos
-msgid "Enhance your site design by using <a href=\"%s\">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. Honos 1.0 uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page."
-msgstr ""
-
-#: inc/customizer.php:404
-#, php-format
-#@ honos
-msgid "For an in-depth tutorial, and more tips and tricks, visit the <a href=\"%s\">Honos 1.0 documentation</a>."
-msgstr ""
-
 #: inc/metaboxes/layouts.php:8
 #@ honos
 msgid "Layouts"
@@ -151,13 +116,13 @@ msgstr ""
 msgid "Layout type"
 msgstr ""
 
-#: inc/template-tags.php:87
+#: inc/template-tags.php:32
 #, php-format
 #@ honos
 msgid "<span class=\"meta-nav\">Published In</span>%title"
 msgstr ""
 
-#: inc/customizer.php:338
+#: inc/customizer.php:224
 #@ honos
 msgid "Documentation"
 msgstr ""
@@ -173,32 +138,32 @@ msgid "Type"
 msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:303
-#: functions.php:719
+#: functions.php:654
 #@ honos
 msgid "Install Required Plugins"
 msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:304
-#: functions.php:720
+#: functions.php:655
 #@ honos
 msgid "Install Plugins"
 msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:305
-#: functions.php:721
+#: functions.php:656
 #, php-format
 #@ honos
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:306
-#: functions.php:722
+#: functions.php:657
 #@ honos
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:308
-#: functions.php:723
+#: functions.php:658
 #, php-format
 #@ honos
 msgid "This theme requires the following plugin: %1$s."
@@ -207,7 +172,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:313
-#: functions.php:724
+#: functions.php:659
 #, php-format
 #@ honos
 msgid "This theme recommends the following plugin: %1$s."
@@ -224,7 +189,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:323
-#: functions.php:729
+#: functions.php:664
 #, php-format
 #@ honos
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
@@ -249,7 +214,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:338
-#: functions.php:726
+#: functions.php:661
 #, php-format
 #@ honos
 msgid "The following required plugin is currently inactive: %1$s."
@@ -258,7 +223,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:343
-#: functions.php:727
+#: functions.php:662
 #, php-format
 #@ honos
 msgid "The following recommended plugin is currently inactive: %1$s."
@@ -275,7 +240,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:353
-#: functions.php:731
+#: functions.php:666
 #@ honos
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
@@ -297,7 +262,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:368
-#: functions.php:733
+#: functions.php:668
 #@ honos
 msgid "Return to Required Plugins Installer"
 msgstr ""
@@ -309,7 +274,7 @@ msgstr ""
 
 #: functions/tgm-activation/class-tgm-plugin-activation.php:370
 #: functions/tgm-activation/class-tgm-plugin-activation.php:3047
-#: functions.php:734
+#: functions.php:669
 #@ honos
 msgid "Plugin activated successfully."
 msgstr ""
@@ -674,7 +639,7 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: functions.php:725
+#: functions.php:660
 #, php-format
 #@ honos
 msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
@@ -682,7 +647,7 @@ msgid_plural "Sorry, but you do not have the correct permissions to install the 
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:728
+#: functions.php:663
 #, php-format
 #@ honos
 msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
@@ -690,7 +655,7 @@ msgid_plural "Sorry, but you do not have the correct permissions to activate the
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:730
+#: functions.php:665
 #, php-format
 #@ honos
 msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
@@ -698,14 +663,14 @@ msgid_plural "Sorry, but you do not have the correct permissions to update the %
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:732
+#: functions.php:667
 #@ honos
 msgid "Activate installed plugin"
 msgid_plural "Activate installed plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:735
+#: functions.php:670
 #, php-format
 #@ honos
 msgid "All plugins installed and activated successfully. %s"
@@ -721,33 +686,33 @@ msgstr ""
 msgid "You can configure your general theme settings here"
 msgstr ""
 
-#: inc/customizer.php:339
+#: inc/customizer.php:225
 #@ honos
 msgid "Follow us on Twitter"
 msgstr ""
 
-#: inc/customizer.php:340
+#: inc/customizer.php:226
 #@ honos
 msgid "Join us on Facebook"
 msgstr ""
 
-#: inc/customizer.php:341
+#: inc/customizer.php:227
 #@ honos
 msgid "Join us on Google+"
 msgstr ""
 
-#: inc/customizer.php:342
+#: inc/customizer.php:228
 #@ honos
 msgid "Cohhe.com"
 msgstr ""
 
-#: inc/template-tags.php:89
+#: inc/template-tags.php:34
 #, php-format
 #@ honos
 msgid "<span class=\"glyphicon glyphicon-chevron-left\"></span><span class=\"post-left\">%title</span>"
 msgstr ""
 
-#: inc/template-tags.php:90
+#: inc/template-tags.php:35
 #, php-format
 #@ honos
 msgid "<span class=\"glyphicon glyphicon-chevron-right\"></span><span class=\"post-right\">%title</span>"
@@ -788,12 +753,12 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: header.php:106
-#@ honos
+#: header.php:73
+#@ beryl
 msgid "Site logo"
 msgstr ""
 
-#: header.php:73
+#: header.php:78
 #@ honos
 msgid "Search"
 msgstr ""
@@ -818,63 +783,58 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: content.php:46
-#: content.php:61
+#: content.php:47
+#: content.php:62
 #@ honos
 msgid "comments"
 msgstr ""
 
-#: content.php:60
+#: content.php:61
 #@ honos
 msgid "By"
 msgstr ""
 
-#: content.php:74
+#: content.php:75
 #@ honos
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: content.php:77
-#@ honos
-msgid "Share post:"
-msgstr ""
-
-#: content.php:88
+#: content.php:80
 #@ honos
 msgid "About post author"
 msgstr ""
 
-#: content.php:94
+#: content.php:86
 #@ honos
 msgid "Author:"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:106
 #@ honos
 msgid "Primary menu"
 msgstr ""
 
-#: functions.php:189
+#: functions.php:173
 #@ honos
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:199
+#: functions.php:183
 #@ honos
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:209
+#: functions.php:193
 #@ honos
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:219
+#: functions.php:203
 #@ honos
 msgid "Footer Area Four"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:213
 #@ honos
 msgid "Post sidebar"
 msgstr ""
@@ -924,76 +884,6 @@ msgstr ""
 msgid "Consult text at the header."
 msgstr ""
 
-#: inc/customizer.php:136
-#@ honos
-msgid "Facebook link"
-msgstr ""
-
-#: inc/customizer.php:137
-#@ honos
-msgid "Facebook social icon at footer."
-msgstr ""
-
-#: inc/customizer.php:156
-#@ honos
-msgid "Twitter link"
-msgstr ""
-
-#: inc/customizer.php:157
-#@ honos
-msgid "Twitter social icon at footer."
-msgstr ""
-
-#: inc/customizer.php:176
-#@ honos
-msgid "RSS link"
-msgstr ""
-
-#: inc/customizer.php:177
-#@ honos
-msgid "RSS social icon at footer."
-msgstr ""
-
-#: inc/customizer.php:196
-#@ honos
-msgid "Dribbble link"
-msgstr ""
-
-#: inc/customizer.php:197
-#@ honos
-msgid "Dribbble social icon at footer."
-msgstr ""
-
-#: inc/customizer.php:216
-#@ honos
-msgid "Linkedin link"
-msgstr ""
-
-#: inc/customizer.php:217
-#@ honos
-msgid "Linkedin social icon at footer."
-msgstr ""
-
-#: inc/customizer.php:236
-#@ honos
-msgid "Behance link"
-msgstr ""
-
-#: inc/customizer.php:237
-#@ honos
-msgid "Behance social icon at footer."
-msgstr ""
-
-#: inc/customizer.php:256
-#@ honos
-msgid "Pinterest link"
-msgstr ""
-
-#: inc/customizer.php:257
-#@ honos
-msgid "Pinterest social icon at footer."
-msgstr ""
-
 #: index.php:24
 #@ honos
 msgid "Blog"
@@ -1002,5 +892,148 @@ msgstr ""
 #: search.php:15
 #@ honos
 msgid "Search results"
+msgstr ""
+
+#: content-none.php:19
+#@ honos
+msgid "Ready to publish your first post?"
+msgstr ""
+
+#: content-none.php:19
+#@ honos
+msgid "Get started here"
+msgstr ""
+
+#: content.php:37
+#: content.php:55
+#@ honos
+msgid "Post with image"
+msgstr ""
+
+#: footer.php:28
+#, php-format
+#@ honos
+msgid "Theme by %s"
+msgstr ""
+
+#: functions.php:135
+#@ honos
+msgid "in"
+msgstr ""
+
+#: functions.php:152
+#@ honos
+msgid "tags"
+msgstr ""
+
+#: functions.php:223
+#@ honos
+msgid "Page sidebar"
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported by Domine, translate this to 'off'. Do not translate into your own language.
+#: functions.php:389
+#@ honos
+msgctxt "Domine font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language.
+#: functions.php:393
+#@ honos
+msgctxt "Merriweather font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported by Lato, translate this to 'off'. Do not translate into your own language.
+#: functions.php:397
+#@ honos
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language.
+#: functions.php:401
+#@ honos
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported by Libre Maskerville, translate this to 'off'. Do not translate into your own language.
+#: functions.php:405
+#@ honos
+msgctxt "Libre Maskerville font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:591
+#@ honos
+msgid "Bootstrap 3 Shortcodes"
+msgstr ""
+
+#: functions.php:600
+#@ honos
+msgid "Contact Form 7"
+msgstr ""
+
+#: functions.php:609
+#@ honos
+msgid "Easy Testimonials"
+msgstr ""
+
+#: functions.php:618
+#@ honos
+msgid "Newsletter"
+msgstr ""
+
+#: functions.php:627
+#@ honos
+msgid "Functionality for Honos theme"
+msgstr ""
+
+#: header.php:83
+#@ honos
+msgid "Call us:"
+msgstr ""
+
+#: header.php:87
+#@ honos
+msgid "Request a free consultation"
+msgstr ""
+
+#: inc/customizer.php:73
+#@ honos
+msgid "Call us text"
+msgstr ""
+
+#: inc/customizer.php:84
+#@ honos
+msgid "Call us link"
+msgstr ""
+
+#: inc/customizer.php:95
+#@ honos
+msgid "Call us link text"
+msgstr ""
+
+#: inc/customizer.php:115
+#@ honos
+msgid "Consult text"
+msgstr ""
+
+#: inc/customizer.php:126
+#@ honos
+msgid "Consult link"
+msgstr ""
+
+#: inc/customizer.php:136
+#: inc/customizer.php:146
+#@ honos
+msgid "Footer columns"
+msgstr ""
+
+#: inc/customizer.php:137
+#@ honos
+msgid "Footer column count."
 msgstr ""
 
