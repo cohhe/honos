@@ -65,12 +65,15 @@ if ( version_compare( $wp_version, '4.5', '>=' ) ) {
 	if ( get_custom_logo() ) {
 		$logo = get_custom_logo();
 	};
+	if ( strpos($logo, 'src=') === false ) {
+		$logo = '';
+	}
 } else {
 	$logo_f = get_custom_header();
 	$logo_f = $logo->url;
 	$logo = '';
 	if ( $logo_f ) {
-		$logo = '<img src="'.esc_url($logo_f).'" alt="'.esc_attr__('Site logo', 'beryl').'">';
+		$logo = '<img src="'.esc_url($logo_f).'" alt="'.esc_attr__('Site logo', 'honos').'">';
 	}
 }
 
@@ -94,8 +97,8 @@ $consult_text_link = get_theme_mod( 'honos_header_consult_text_link', '' );
 	<header class="main-header">
 		<div class="header-top-wrapper">
 			<div class="header-top">
-				<?php if ( $call_us_link && $call_us_link_text ) { ?>
-					<span class="call-us"><?php echo esc_html($call_us_text); ?> <a href="<?php echo esc_url($call_us_link); ?>"><?php echo esc_html($call_us_link_text); ?></a></span>
+				<?php if ( $call_us_link_text ) { ?>
+					<span class="call-us"><?php echo esc_html($call_us_text); ?> <a href="<?php echo ($call_us_link?esc_url($call_us_link):''); ?>"><?php echo esc_html($call_us_link_text); ?></a></span>
 				<?php } ?>
 				<span class="header-search icon-search"></span>
 				<?php get_search_form( true ); ?>

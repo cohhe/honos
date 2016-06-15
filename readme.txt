@@ -47,3 +47,24 @@ bxSlider is licensed under the MIT license
 Source: http://bxslider.com/
 
 Used images in screenshot.png, licensed under CC0 Public Domain, free for commercial use / no attribution required
+
+
+
+
+Footer collumns:
+Footer column count can be set at Dashboard > Appearance > Customize > Theme Options > Footer columns
+Footer columns are set to display one by one as in if footer column count is set to 3 then only the first 3 footer sidebars are going to be displayed, not for example 1st, 2nd and 4th.
+
+Homepage consists of these shortcodes:
+[honos_main_slider tag="slider"] - Displays all posts with the tag slider.
+[honos_practice icon="icon-wheelchair" text="Accidents" image="8" url="#"] - Displays the practice area images.
+[honos_team image="27" name="Jane Doe" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel nunc consequat, mollis arcu et, aliquam dui. Sed posuere luctus massa sed vulputate. Maecenas sit amet gravida ligula." url="#" email="jane@honos.com" facebook="#" twitter="#" linkedin="#"] - Displays the team member information.
+[honos_testimonial_carousel image="http://localhost/lawyer/wp-content/uploads/2016/01/Untitled-23-2.jpg"] - Displays the testimonial carousel, posts pulled from plugin "Easy Testimonials".
+[honos_latest_news] - Displays the newest posts.
+
+Header logo/Site title & tagline:
+Site title and tagline is displayed by default, if you set your logo at Dashboard > Appearance > Customize > Site identity, then site title and tagline is replaced by your logo.
+
+Post/page sidebars:
+To set a post or page sidebar you have to set your desired page layour first while editing the current post or page. Then go ahead and set the sidebar with widgets at Dashboard > Appearance > Widgets.
+Post sidebar widgets are going to be shown at posts and Page sidebar widgets are going to be shown at pages.

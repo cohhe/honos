@@ -1,5 +1,16 @@
 Honos changelog
 
+= Version 1.3 =
+* Escaped admin_url function
+* Fixed incorrect domain
+* Removed social links from customizer
+* Moved all of the customizer options under Theme Options panel
+* Call us can be added without a link
+* Added some clarifications at readme.txt
+* Fixed the issue that site title wasn't shown at the customizer
+* Fixed Theme Check warnings
+* Limited the logo max width and fixed ratio
+
 = Version 1.2 =
 * Added text domain to untranslatable strings
 * Escaped text outputs
