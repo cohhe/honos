@@ -48,7 +48,7 @@ function honos_customize_register( $wp_customize ) {
 		'panel'          => 'honos_theme_options_panel'
 	) );
 
-	$wp_customize->add_setting( 'honos_header_call_us_text', array( 'default' => 'Call us:', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_setting( 'honos_header_call_us_text', array( 'default' => esc_html__('Call us:', 'honos'), 'sanitize_callback' => 'sanitize_text_field' ) );
 
 	$wp_customize->add_control(
 		'honos_header_call_us_text',
@@ -90,7 +90,7 @@ function honos_customize_register( $wp_customize ) {
 		'panel'          => 'honos_theme_options_panel'
 	) );
 
-	$wp_customize->add_setting( 'honos_header_consult_text', array( 'default' => 'Request a free consultation', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_setting( 'honos_header_consult_text', array( 'default' => esc_html__('Request a free consultation', 'honos'), 'sanitize_callback' => 'sanitize_text_field' ) );
 
 	$wp_customize->add_control(
 		'honos_header_consult_text',
@@ -130,10 +130,10 @@ function honos_customize_register( $wp_customize ) {
 			'section'    => 'honos_footer_columns',
 			'type'       => 'select',
 			'choices'  => array(
-				'1' => '1 column',
-				'2' => '2 columns',
-				'3' => '3 columns',
-				'4' => '4 columns'
+				'1' => esc_html__('1 column', 'honos'),
+				'2' => esc_html__('2 columns', 'honos'),
+				'3' => esc_html__('3 columns', 'honos'),
+				'4' => esc_html__('4 columns', 'honos')
 			)
 		)
 	);

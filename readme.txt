@@ -68,3 +68,12 @@ Site title and tagline is displayed by default, if you set your logo at Dashboar
 Post/page sidebars:
 To set a post or page sidebar you have to set your desired page layour first while editing the current post or page. Then go ahead and set the sidebar with widgets at Dashboard > Appearance > Widgets.
 Post sidebar widgets are going to be shown at posts and Page sidebar widgets are going to be shown at pages.
+
+
+Functionality for Honos theme shortcodes:
+[honos_main_slider] - Accepts tag, limit, navigation, autoplay arguments
+[honos_practice] - Accepts icon, text, image, url arguments
+[honos_team] - Accepts image, name, description, url, email, facebook, twitter, linkedin arguments
+[honos_latest_news] - Accepts tag, limit arguments
+[honos_sliding_content] - Accepts icon, title, secondary_title, button_text, button_url arguments
+[honos_testimonial_carousel] - Accepts limit, image arguments

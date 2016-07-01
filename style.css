@@ -4,10 +4,10 @@ Theme URI: https://cohhe.com/project-view/honos/
 Author: Cohhe
 Author URI: https://cohhe.com/
 Description: Enhance your story experience, by leveraging the power of Honos Wordpress Theme, built especially for telling great stories. It is the only free WordPress theme fully compatible with the Aesop Story Engine.
-Version: 1.3
+Version: 1.4
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background, editor-style, featured-images, flexible-header, full-width-template, microformats, sticky-post, theme-options, translation-ready
 Text Domain: honos 
 
 This theme, like WordPress, is licensed under the GPL.
@@ -93,7 +93,7 @@ body {
 	padding: 0px;
 	font-family: 'Merriweather', serif;
 	font-size: 14px;
-	line-height: 25px;
+	line-height: 1.786;
 	font-weight: 300;
 }
 
@@ -836,6 +836,7 @@ hr {
 .blog-name {
 	display: block;
 	font-size: 30px;
+	line-height: 36px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
@@ -846,6 +847,7 @@ hr {
 	white-space: nowrap;
 	overflow: hidden;
 	display: block;
+	line-height: 1;
 }
 
 #primary-navigation .menu-item-has-children.depth-0 > ul {
