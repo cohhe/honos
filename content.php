@@ -31,10 +31,9 @@ if ( $comment_count == 0 ) {
 	<header class="entry-header <?php echo esc_attr($header_class); ?>">
 		<?php
 			if ( !is_single() && ( is_home() || is_archive() || is_search() ) ) {
-				$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'honos-latest-news' );
 				echo '<div class="single-image-container">';
-				if ( !empty($img) ) {
-					echo '<img src="'.esc_url($img['0']).'" class="single-post-image" alt="'.esc_attr__('Post with image', 'honos').'">';
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail('honos-latest-news');
 				} else {
 					echo '<span class="post-no-image"></span>';
 				}
@@ -44,22 +43,21 @@ if ( $comment_count == 0 ) {
 					echo '<span class="post-date">' . get_the_date( get_option( 'date_format' ), get_the_ID() ) . '</span>';
 					echo honos_category_list( get_the_ID(), true );
 					echo honos_tag_list( get_the_ID(), true );
-					echo '<span class="post-comments"><a href="' . get_the_permalink() . '#comments">' . $comment_count . ' ' . esc_html__('comments', 'honos') . '</a></span>';
+					echo '<span class="post-comments"><a href="' . esc_url(get_the_permalink()) . '#comments">' . $comment_count . ' ' . esc_html__('comments', 'honos') . '</a></span>';
 				echo '</div>';
 				echo '</header><!-- .entry-header -->';
 			} elseif ( is_single() && !is_home() ) {
 				echo '</header><!-- .entry-header -->';
-				$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'honos-full-width' );
 				echo '<div class="single-post-image-container">';
-				if ( !empty($img) ) {
-					echo '<img src="'.esc_url($img['0']).'" class="single-post-image" alt="'.esc_attr__('Post with image', 'honos').'">';
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail('honos-full-width');
 				}
 				echo '</div>';
 				the_title( '<h3 class="entry-title">', '</h3>' );
 				echo '<div class="post-meta">';
 					echo '<span class="post-date">' . get_the_date( get_option( 'date_format' ), get_the_ID() ) . '</span>';
 					echo '<span class="post-author">' . esc_html__('By', 'honos') . ': ' . get_the_author() . '</span>';
-					echo '<span class="post-comments"><a href="' . get_the_permalink() . '#comments">' . $comment_count . ' ' . esc_html__('comments', 'honos') . '</a></span>';
+					echo '<span class="post-comments"><a href="' . esc_url(get_the_permalink()) . '#comments">' . $comment_count . ' ' . esc_html__('comments', 'honos') . '</a></span>';
 				echo '</div>';
 			}
 		?>

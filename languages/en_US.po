@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Honos v1.1\n"
+"Project-Id-Version: Honos v1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-06-06 12:17:41+0000\n"
+"PO-Revision-Date: 2016-08-25 07:16:39+0000\n"
 "Last-Translator: smaids <smaids2007@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -61,8 +61,8 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-page.php:23
-#: content.php:96
+#: content-page.php:22
+#: content.php:94
 #@ honos
 msgid "Pages:"
 msgstr ""
@@ -116,54 +116,45 @@ msgstr ""
 msgid "Layout type"
 msgstr ""
 
-#: inc/template-tags.php:32
-#, php-format
-#@ honos
-msgid "<span class=\"meta-nav\">Published In</span>%title"
-msgstr ""
-
-#: inc/customizer.php:224
-#@ honos
-msgid "Documentation"
-msgstr ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2664
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2726
 #@ honos
 msgid "Activate"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2510
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2549
 #@ honos
 msgid "Type"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:303
-#: functions.php:654
+#: functions/tgm-activation/class-tgm-plugin-activation.php:327
+#: functions.php:583
 #@ honos
 msgid "Install Required Plugins"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:304
-#: functions.php:655
+#: functions/tgm-activation/class-tgm-plugin-activation.php:328
+#: functions.php:584
 #@ honos
 msgid "Install Plugins"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:305
-#: functions.php:656
+#. translators: %s: plugin name.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:330
+#: functions.php:585
 #, php-format
 #@ honos
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:306
-#: functions.php:657
+#: functions/tgm-activation/class-tgm-plugin-activation.php:333
+#: functions.php:586
 #@ honos
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:308
-#: functions.php:658
+#. translators: 1: plugin name(s).
+#: functions/tgm-activation/class-tgm-plugin-activation.php:336
+#: functions.php:587
 #, php-format
 #@ honos
 msgid "This theme requires the following plugin: %1$s."
@@ -171,8 +162,9 @@ msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:313
-#: functions.php:659
+#. translators: 1: plugin name(s).
+#: functions/tgm-activation/class-tgm-plugin-activation.php:342
+#: functions.php:588
 #, php-format
 #@ honos
 msgid "This theme recommends the following plugin: %1$s."
@@ -180,16 +172,9 @@ msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:318
-#, php-format
-#@ honos
-msgid "Sorry, but you do not have the correct permissions to install the %1$s plugin."
-msgid_plural "Sorry, but you do not have the correct permissions to install the %1$s plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:323
-#: functions.php:664
+#. translators: 1: plugin name(s).
+#: functions/tgm-activation/class-tgm-plugin-activation.php:348
+#: functions.php:593
 #, php-format
 #@ honos
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
@@ -197,7 +182,8 @@ msgid_plural "The following plugins need to be updated to their latest version t
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:328
+#. translators: 1: plugin name(s).
+#: functions/tgm-activation/class-tgm-plugin-activation.php:354
 #, php-format
 #@ honos
 msgid "There is an update available for: %1$s."
@@ -205,16 +191,9 @@ msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:333
-#, php-format
-#@ honos
-msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
-msgid_plural "Sorry, but you do not have the correct permissions to update the %1$s plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:338
-#: functions.php:661
+#. translators: 1: plugin name(s).
+#: functions/tgm-activation/class-tgm-plugin-activation.php:360
+#: functions.php:590
 #, php-format
 #@ honos
 msgid "The following required plugin is currently inactive: %1$s."
@@ -222,8 +201,9 @@ msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:343
-#: functions.php:662
+#. translators: 1: plugin name(s).
+#: functions/tgm-activation/class-tgm-plugin-activation.php:366
+#: functions.php:591
 #, php-format
 #@ honos
 msgid "The following recommended plugin is currently inactive: %1$s."
@@ -231,196 +211,170 @@ msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:348
-#, php-format
-#@ honos
-msgid "Sorry, but you do not have the correct permissions to activate the %1$s plugin."
-msgid_plural "Sorry, but you do not have the correct permissions to activate the %1$s plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:353
-#: functions.php:666
+#: functions/tgm-activation/class-tgm-plugin-activation.php:371
+#: functions.php:595
 #@ honos
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:358
+#: functions/tgm-activation/class-tgm-plugin-activation.php:376
 #@ honos
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:363
+#: functions/tgm-activation/class-tgm-plugin-activation.php:381
 #@ honos
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:368
-#: functions.php:668
+#: functions/tgm-activation/class-tgm-plugin-activation.php:385
+#: functions.php:597
 #@ honos
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:369
-#@ honos
-msgid "Return to the dashboard"
-msgstr ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:370
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3047
-#: functions.php:669
+#: functions/tgm-activation/class-tgm-plugin-activation.php:387
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3159
+#: functions.php:598
 #@ honos
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:372
+#. translators: 1: plugin name.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:390
 #, php-format
 #@ honos
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:373
+#. translators: 1: plugin name.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:392
 #, php-format
 #@ honos
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:374
+#. translators: 1: dashboard link.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:394
 #, php-format
 #@ honos
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:375
+#: functions/tgm-activation/class-tgm-plugin-activation.php:395
 #@ honos
 msgid "Dismiss this notice"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:376
+#: functions/tgm-activation/class-tgm-plugin-activation.php:397
 #@ honos
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:494
+#: functions/tgm-activation/class-tgm-plugin-activation.php:522
 #@ honos
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:495
+#: functions/tgm-activation/class-tgm-plugin-activation.php:523
 #@ honos
 msgid "Update Required"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:612
-#@ honos
-msgid "Set the parent_slug config variable instead."
-msgstr ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:806
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3465
+#: functions/tgm-activation/class-tgm-plugin-activation.php:386
+#: functions/tgm-activation/class-tgm-plugin-activation.php:827
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2533
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3580
 #@ honos
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:921
+#: functions/tgm-activation/class-tgm-plugin-activation.php:934
 #@ honos
 msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:921
-#: functions/tgm-activation/class-tgm-plugin-activation.php:925
+#: functions/tgm-activation/class-tgm-plugin-activation.php:934
+#: functions/tgm-activation/class-tgm-plugin-activation.php:937
 #@ honos
 msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:925
+#: functions/tgm-activation/class-tgm-plugin-activation.php:937
 #@ honos
 msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:1110
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2864
+#: functions/tgm-activation/class-tgm-plugin-activation.php:1121
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2948
 #@ honos
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:1932
-#, php-format
-#@ honos
-msgctxt "%s = version number"
-msgid "TGMPA v%s"
-msgstr ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2213
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2273
 #@ honos
 msgid "Required"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2216
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2276
 #@ honos
 msgid "Recommended"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2233
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2292
 #@ honos
 msgid "WordPress Repository"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2237
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2295
 #@ honos
 msgid "External Source"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2241
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2298
 #@ honos
 msgid "Pre-Packaged"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2260
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2315
 #@ honos
 msgid "Not Installed"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2264
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2319
 #@ honos
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2266
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2321
 #@ honos
 msgid "Active"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2272
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2327
 #@ honos
 msgid "Required Update not Available"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2275
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2330
 #@ honos
 msgid "Requires Update"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2278
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2333
 #@ honos
 msgid "Update recommended"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2286
-#, php-format
-#@ honos
-msgctxt "%1$s = install status, %2$s = update status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2335
+#. translators: 1: number of plugins.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2388
 #, php-format
 #@ honos
 msgctxt "plugins"
@@ -429,7 +383,8 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2339
+#. translators: 1: number of plugins.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2392
 #, php-format
 #@ honos
 msgid "To Install <span class=\"count\">(%s)</span>"
@@ -437,7 +392,8 @@ msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2343
+#. translators: 1: number of plugins.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2396
 #, php-format
 #@ honos
 msgid "Update Available <span class=\"count\">(%s)</span>"
@@ -445,7 +401,8 @@ msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2347
+#. translators: 1: number of plugins.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2400
 #, php-format
 #@ honos
 msgid "To Activate <span class=\"count\">(%s)</span>"
@@ -453,193 +410,173 @@ msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2440
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2482
 #@ honos
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2448
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2490
 #@ honos
 msgid "Installed version:"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2456
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2498
 #@ honos
 msgid "Minimum required version:"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2468
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2510
 #@ honos
 msgid "Available version:"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2492
-#, php-format
-#@ honos
-msgid "No plugins to install, update or activate. <a href=\"%1$s\">Return to the Dashboard</a>"
-msgstr ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2508
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2547
 #@ honos
 msgid "Plugin"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2509
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2548
 #@ honos
 msgid "Source"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2514
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2553
 #@ honos
 msgid "Version"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2515
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2554
 #@ honos
 msgid "Status"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2539
-#, php-format
-#@ honos
-msgctxt "%2$s = plugin name in screen reader markup"
-msgid "Install %2$s"
-msgstr ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2545
-#, php-format
-#@ honos
-msgctxt "%2$s = plugin name in screen reader markup"
-msgid "Update %2$s"
-msgstr ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2551
-#, php-format
-#@ honos
-msgctxt "%2$s = plugin name in screen reader markup"
-msgid "Activate %2$s"
-msgstr ""
-
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2622
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2684
 #@ honos
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2655
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2717
 #@ honos
 msgid "Install"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2661
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2723
 #@ honos
 msgid "Update"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2725
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2800
 #@ honos
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2727
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2802
 #@ honos
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2850
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2934
 #@ honos
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
 #. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
-#: functions/tgm-activation/class-tgm-plugin-activation.php:2868
-#: functions/tgm-activation/class-tgm-plugin-activation.php:371
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2952
+#: functions/tgm-activation/class-tgm-plugin-activation.php:388
 #@ honos
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3046
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3158
 #@ honos
 msgid "Plugin activation failed."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3385
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3498
 #, php-format
 #@ honos
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3389
+#. translators: 1: plugin name, 2: error message.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3501
 #, php-format
 #@ honos
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3390
+#. translators: 1: plugin name.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3503
 #, php-format
 #@ honos
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3394
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3507
 #@ honos
 msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3395
+#. translators: 1: plugin name.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3509
 #, php-format
 #@ honos
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3395
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3402
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3509
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3517
 #@ honos
 msgid "Show Details"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3395
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3402
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3509
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3517
 #@ honos
 msgid "Hide Details"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3396
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3510
 #@ honos
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3397
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3512
 #, php-format
 #@ honos
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3401
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3515
 #@ honos
 msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3402
+#. translators: 1: plugin name.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3517
 #, php-format
 #@ honos
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3403
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3518
 #@ honos
 msgid "All installations have been completed."
 msgstr ""
 
-#: functions/tgm-activation/class-tgm-plugin-activation.php:3404
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3520
 #, php-format
 #@ honos
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: functions.php:660
+#: functions.php:589
 #, php-format
 #@ honos
 msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
@@ -647,7 +584,7 @@ msgid_plural "Sorry, but you do not have the correct permissions to install the 
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:663
+#: functions.php:592
 #, php-format
 #@ honos
 msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
@@ -655,7 +592,7 @@ msgid_plural "Sorry, but you do not have the correct permissions to activate the
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:665
+#: functions.php:594
 #, php-format
 #@ honos
 msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
@@ -663,59 +600,17 @@ msgid_plural "Sorry, but you do not have the correct permissions to update the %
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:667
+#: functions.php:596
 #@ honos
 msgid "Activate installed plugin"
 msgid_plural "Activate installed plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:670
+#: functions.php:599
 #, php-format
 #@ honos
 msgid "All plugins installed and activated successfully. %s"
-msgstr ""
-
-#: inc/customizer.php:39
-#@ honos
-msgid "General settings"
-msgstr ""
-
-#: inc/customizer.php:40
-#@ honos
-msgid "You can configure your general theme settings here"
-msgstr ""
-
-#: inc/customizer.php:225
-#@ honos
-msgid "Follow us on Twitter"
-msgstr ""
-
-#: inc/customizer.php:226
-#@ honos
-msgid "Join us on Facebook"
-msgstr ""
-
-#: inc/customizer.php:227
-#@ honos
-msgid "Join us on Google+"
-msgstr ""
-
-#: inc/customizer.php:228
-#@ honos
-msgid "Cohhe.com"
-msgstr ""
-
-#: inc/template-tags.php:34
-#, php-format
-#@ honos
-msgid "<span class=\"glyphicon glyphicon-chevron-left\"></span><span class=\"post-left\">%title</span>"
-msgstr ""
-
-#: inc/template-tags.php:35
-#, php-format
-#@ honos
-msgid "<span class=\"glyphicon glyphicon-chevron-right\"></span><span class=\"post-right\">%title</span>"
 msgstr ""
 
 #: comments.php:68
@@ -753,29 +648,14 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: header.php:73
-#@ beryl
+#: header.php:76
+#@ honos
 msgid "Site logo"
 msgstr ""
 
-#: header.php:78
+#: header.php:81
 #@ honos
 msgid "Search"
-msgstr ""
-
-#: archive.php:25
-#@ honos
-msgid "Archive"
-msgstr ""
-
-#: author.php:19
-#@ honos
-msgid "Author"
-msgstr ""
-
-#: category.php:16
-#@ honos
-msgid "Category"
 msgstr ""
 
 #: content.php:25
@@ -783,28 +663,28 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: content.php:47
-#: content.php:62
+#: content.php:46
+#: content.php:60
 #@ honos
 msgid "comments"
 msgstr ""
 
-#: content.php:61
+#: content.php:59
 #@ honos
 msgid "By"
 msgstr ""
 
-#: content.php:75
+#: content.php:73
 #@ honos
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: content.php:80
+#: content.php:78
 #@ honos
 msgid "About post author"
 msgstr ""
 
-#: content.php:86
+#: content.php:84
 #@ honos
 msgid "Author:"
 msgstr ""
@@ -844,42 +724,7 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer.php:47
-#@ honos
-msgid "Header settings"
-msgstr ""
-
-#: inc/customizer.php:48
-#@ honos
-msgid "You can configure your header theme settings here"
-msgstr ""
-
-#: inc/customizer.php:55
-#@ honos
-msgid "Footer settings"
-msgstr ""
-
-#: inc/customizer.php:56
-#@ honos
-msgid "You can configure your footer theme settings here"
-msgstr ""
-
-#: inc/customizer.php:63
-#@ honos
-msgid "Call us"
-msgstr ""
-
-#: inc/customizer.php:64
-#@ honos
-msgid "Call us text at the header."
-msgstr ""
-
-#: inc/customizer.php:105
-#@ honos
-msgid "Consult"
-msgstr ""
-
-#: inc/customizer.php:106
+#: inc/customizer.php:89
 #@ honos
 msgid "Consult text at the header."
 msgstr ""
@@ -904,12 +749,6 @@ msgstr ""
 msgid "Get started here"
 msgstr ""
 
-#: content.php:37
-#: content.php:55
-#@ honos
-msgid "Post with image"
-msgstr ""
-
 #: footer.php:28
 #, php-format
 #@ honos
@@ -932,108 +771,223 @@ msgid "Page sidebar"
 msgstr ""
 
 #. translators: If there are characters in your language that are not supported by Domine, translate this to 'off'. Do not translate into your own language.
-#: functions.php:389
+#: functions.php:318
 #@ honos
 msgctxt "Domine font: on or off"
 msgid "on"
 msgstr ""
 
 #. translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language.
-#: functions.php:393
+#: functions.php:322
 #@ honos
 msgctxt "Merriweather font: on or off"
 msgid "on"
 msgstr ""
 
 #. translators: If there are characters in your language that are not supported by Lato, translate this to 'off'. Do not translate into your own language.
-#: functions.php:397
+#: functions.php:326
 #@ honos
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
 
 #. translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language.
-#: functions.php:401
+#: functions.php:330
 #@ honos
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
 #. translators: If there are characters in your language that are not supported by Libre Maskerville, translate this to 'off'. Do not translate into your own language.
-#: functions.php:405
+#: functions.php:334
 #@ honos
 msgctxt "Libre Maskerville font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:591
+#: functions.php:520
 #@ honos
 msgid "Bootstrap 3 Shortcodes"
 msgstr ""
 
-#: functions.php:600
+#: functions.php:529
 #@ honos
 msgid "Contact Form 7"
 msgstr ""
 
-#: functions.php:609
+#: functions.php:538
 #@ honos
 msgid "Easy Testimonials"
 msgstr ""
 
-#: functions.php:618
+#: functions.php:547
 #@ honos
 msgid "Newsletter"
 msgstr ""
 
-#: functions.php:627
+#: functions.php:556
 #@ honos
 msgid "Functionality for Honos theme"
 msgstr ""
 
-#: header.php:83
+#: header.php:86
+#: inc/customizer.php:51
 #@ honos
 msgid "Call us:"
 msgstr ""
 
-#: header.php:87
+#: header.php:90
+#: inc/customizer.php:93
 #@ honos
 msgid "Request a free consultation"
 msgstr ""
 
-#: inc/customizer.php:73
+#: inc/customizer.php:56
 #@ honos
 msgid "Call us text"
 msgstr ""
 
-#: inc/customizer.php:84
+#: inc/customizer.php:67
 #@ honos
 msgid "Call us link"
 msgstr ""
 
-#: inc/customizer.php:95
+#: inc/customizer.php:78
 #@ honos
 msgid "Call us link text"
 msgstr ""
 
-#: inc/customizer.php:115
+#: inc/customizer.php:98
 #@ honos
 msgid "Consult text"
 msgstr ""
 
-#: inc/customizer.php:126
+#: inc/customizer.php:109
 #@ honos
 msgid "Consult link"
 msgstr ""
 
-#: inc/customizer.php:136
-#: inc/customizer.php:146
+#: inc/customizer.php:119
+#: inc/customizer.php:129
 #@ honos
 msgid "Footer columns"
 msgstr ""
 
-#: inc/customizer.php:137
+#: inc/customizer.php:120
 #@ honos
 msgid "Footer column count."
+msgstr ""
+
+#. translators: %s: plugin name.
+#: functions/tgm-activation/class-tgm-plugin-activation.php:332
+#, php-format
+#@ honos
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:396
+#@ honos
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#. translators: %s: version number
+#: functions/tgm-activation/class-tgm-plugin-activation.php:1982
+#, php-format
+#@ honos
+msgid "TGMPA v%s"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2342
+#, php-format
+#@ honos
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2533
+#@ honos
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2603
+#, php-format
+#@ honos
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2608
+#, php-format
+#@ honos
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2614
+#, php-format
+#@ honos
+msgid "Activate %2$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2757
+#@ honos
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2759
+#@ honos
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2908
+#@ honos
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: inc/customizer.php:39
+#@ honos
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer.php:40
+#@ honos
+msgid "You can configure your theme settings here"
+msgstr ""
+
+#: inc/customizer.php:46
+#@ honos
+msgid "Header Call us"
+msgstr ""
+
+#: inc/customizer.php:47
+#@ honos
+msgid "Here you're able to configure your header call us link."
+msgstr ""
+
+#: inc/customizer.php:88
+#@ honos
+msgid "Header Consult"
+msgstr ""
+
+#: inc/customizer.php:133
+#@ honos
+msgid "1 column"
+msgstr ""
+
+#: inc/customizer.php:134
+#@ honos
+msgid "2 columns"
+msgstr ""
+
+#: inc/customizer.php:135
+#@ honos
+msgid "3 columns"
+msgstr ""
+
+#: inc/customizer.php:136
+#@ honos
+msgid "4 columns"
 msgstr ""
 

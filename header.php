@@ -62,7 +62,7 @@ if ( ( HONOS_LAYOUT != 'sidebar-no' && is_active_sidebar( 'sidebar-5' ) ) || ( H
 
 if ( version_compare( $wp_version, '4.5', '>=' ) ) {
 	$logo = '';
-	if ( get_custom_logo() ) {
+	if ( has_custom_logo() ) {
 		$logo = get_custom_logo();
 	};
 	if ( strpos($logo, 'src=') === false ) {
