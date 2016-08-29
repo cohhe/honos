@@ -233,77 +233,6 @@ function honos_widgets_init() {
 add_action('widgets_init', 'honos_widgets_init');
 
 /**
- * Custom template tags for honos 1.0
- *
- * @package WordPress
- * @subpackage honos
- * @since honos 1.0
- */
-
-if ( ! function_exists( 'honos_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @since honos 1.0
- *
- * @return void
- */
-function honos_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-
-	$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-	$pagenum_link = html_entity_decode( get_pagenum_link() );
-	$query_args   = array();
-	$url_parts    = explode( '?', $pagenum_link );
-
-	if ( isset( $url_parts[1] ) ) {
-		wp_parse_str( $url_parts[1], $query_args );
-	}
-
-	$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
-	$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
-
-	$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
-	$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
-
-	// Set up paginated links.
-	$links = paginate_links( array(
-		'base'     => $pagenum_link,
-		'format'   => $format,
-		'total'    => $GLOBALS['wp_query']->max_num_pages,
-		'current'  => $paged,
-		'mid_size' => 1,
-		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => '',
-		'next_text' => '',
-	) );
-
-	if ( $links ) :
-
-	?>
-	<div class="clearfix"></div>
-	<nav class="navigation paging-navigation" role="navigation">
-		<div class="pagination loop-pagination">
-			<?php echo wp_kses($links,array(
-		    'a' => array(
-		        'href' => array(),
-		        'class' => array()
-		    ),
-		    'span' => array(
-		    	'class' => array()
-		    	)
-		)); ?>
-		</div><!-- .pagination -->
-	</nav><!-- .navigation -->
-	<?php
-	endif;
-}
-endif;
-
-/**
  * Adjust content_width value for image attachment template.
  *
  * @since Honos 1.0
@@ -644,8 +573,7 @@ function honos_register_required_plugins() {
 	$config = array(
 		'domain'       		=> 'honos',         	// Text domain - likely want to be the same as your theme.
 		'default_path' 		=> '',                         	// Default absolute path to pre-packaged plugins
-		'parent_menu_slug' 	=> 'themes.php', 				// Default parent menu slug
-		'parent_url_slug' 	=> 'themes.php', 				// Default parent URL slug
+		'parent_slug' 	    => 'themes.php', 				// Default parent menu slug
 		'menu'         		=> 'install-required-plugins', 	// Menu slug
 		'has_notices'      	=> true,                       	// Show admin notices or not
 		'is_automatic'    	=> true,					   	// Automatically activate plugins after installation or not

@@ -7,14 +7,13 @@
  * @since Zap 1.0
  */
 
-$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'honos-full-width' );
 ?>
 
 <article id="post-<?php esc_attr(the_ID()); ?>" <?php post_class(); ?>>
 	<div class="entry-content">
 		<div id="entry-content-wrapper">
-			<?php if ( !empty($img) ) {
-				echo '<img src="'.esc_url($img['0']).'" class="single-post-image" alt="Page with image">';
+			<?php if ( has_post_thumbnail() ) {
+				the_post_thumbnail('honos-full-width');
 			} ?>
 			<?php the_content(); ?>
 		</div>

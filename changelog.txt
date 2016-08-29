@@ -1,6 +1,14 @@
 Honos changelog
 
-= Version 1.3 =
+= Version 1.5 =
+* Using the_post_thumbnail for images
+* Using WordPress navigation function
+* Using has_custom_logo to check custom logo
+* Escaped/sanitized some content
+* Fixed some licensing issues
+* Updated TGMPA
+
+= Version 1.4 =
 * Removed post-formats tag
 * Fixed Site title
 * Removed some templates

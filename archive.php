@@ -46,7 +46,7 @@ global $honos_site_width;
 				endif;
 			?>
 	</div><!-- .content-wrapper -->
-	<?php honos_paging_nav(); ?>
+	<?php the_posts_pagination( array( 'next_text' => '>', 'prev_text' => '<' ) ); ?>
 </div><!-- #main-content -->
 
 <?php

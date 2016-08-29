@@ -59,7 +59,7 @@ function honos_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting( 'honos_header_call_us_link', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_setting( 'honos_header_call_us_link', array( 'sanitize_callback' => 'esc_url_raw' ) );
 
 	$wp_customize->add_control(
 		'honos_header_call_us_link',
@@ -101,7 +101,7 @@ function honos_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting( 'honos_header_consult_text_link', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_setting( 'honos_header_consult_text_link', array( 'sanitize_callback' => 'esc_url_raw' ) );
 
 	$wp_customize->add_control(
 		'honos_header_consult_text_link',
@@ -121,7 +121,7 @@ function honos_customize_register( $wp_customize ) {
 		'panel'          => 'honos_theme_options_panel'
 	) );
 
-	$wp_customize->add_setting( 'honos_footer_column_count', array( 'default' => '4', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_setting( 'honos_footer_column_count', array( 'default' => '4', 'sanitize_callback' => 'absint' ) );
 
 	$wp_customize->add_control(
 		'honos_footer_column_count',

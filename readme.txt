@@ -22,10 +22,6 @@ Genericons icon font, Copyright 2013 Automattic
 Genericons are licensed under the terms of the GNU GPL, Version 2.
 Source: http://www.genericons.com
 
-GLYPHICONS, Copyright 2010 - 2015 Jan Kovařík
-GLYPHICONS is licensed under the GPLv3.0
-Source: http://glyphicons.com
-
 Bootstrap, Copyright 2015 Twitter
 Bootstrap is released under the MIT license
 Source: http://getbootstrap.com
@@ -46,9 +42,20 @@ bxSlider, Copyright 2014 Steven Wanderski
 bxSlider is licensed under the MIT license
 Source: http://bxslider.com/
 
+Animate, Copyright 2016 Daniel Eden
+Animate is licensed under the MIT license
+Source: https://daneden.github.io/animate.css/
+
 Used images in screenshot.png, licensed under CC0 Public Domain, free for commercial use / no attribution required
-
-
+https://pixabay.com/en/knowledge-book-library-glasses-1052014/
+https://pixabay.com/en/car-wrecked-accident-collision-845143/
+https://pixabay.com/en/skyscraper-homes-city-america-450793/
+https://pixabay.com/en/person-woman-asian-female-801823/
+https://pixabay.com/en/bank-note-euro-bills-paper-money-209104/
+https://pixabay.com/en/semperoper-dresden-night-germany-488743/
+https://pixabay.com/en/baby-caucasian-child-daughter-20607/
+https://pixabay.com/en/glasses-read-learn-book-text-272399/
+https://pixabay.com/en/hall-crystal-chandelier-meeting-571844/
 
 
 Footer collumns:

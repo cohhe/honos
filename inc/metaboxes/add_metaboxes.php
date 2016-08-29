@@ -62,7 +62,7 @@ class honos_create_meta_boxes {
 
 					// Find and save the data
 					if($value != '') {
-						update_post_meta($post_id, $option['id'], $value);
+						update_post_meta($post_id, sanitize_text_field($option['id']), sanitize_text_field($value));
 					} else {
 						delete_post_meta($post_id, $option['id'], get_post_meta($post_id, $option['id'], true));
 					}
