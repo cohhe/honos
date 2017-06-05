@@ -1,5 +1,8 @@
 Honos changelog
 
+= Version 1.5.2 =
+* Checked WordPress 4.8 compatibility
+
 = Version 1.5.1 =
 * Removed theme URI
 
